@@ -89,7 +89,7 @@ def run_colmap(args):
     if os.path.exists(db):
         os.remove(db)
     do_system(f"colmap feature_extractor --SiftExtraction.use_gpu 0 --ImageReader.camera_model OPENCV --SiftExtraction.estimate_affine_shape {flag_EAS} --SiftExtraction.domain_size_pooling {flag_EAS} --ImageReader.single_camera 1 --database_path {db} --image_path {images}")
-    do_system(f"colmap {args.colmap_matcher}_matcher --SiftMatching.guided_matching {flag_EAS} --database_path {db}")
+    do_system(f"colmap {args.colmap_matcher}_matcher --SiftMatching.use_gpu 0 --SiftMatching.guided_matching {flag_EAS} --database_path {db}")
     try:
         shutil.rmtree(sparse)
     except:
