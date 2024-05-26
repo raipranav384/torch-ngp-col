@@ -33,7 +33,7 @@ https://user-images.githubusercontent.com/25863658/175821784-63ba79f6-29be-47b5-
 
 # Install
 ```bash
-git clone --recursive https://github.com/ashawkey/torch-ngp.git
+git clone --recursive https://github.com/raipranav384/torch-ngp-col.git
 cd torch-ngp
 ```
 
