@@ -21,7 +21,8 @@ class CamDataset(Dataset):
         cx=self.json_data['cx']
         cy=self.json_data['cy']
         self.frames=self.json_data['frames']
-        self.aabb=self.json_data['aabb_scale']
+        if 'aabb_scale' in self.json_data:
+            self.aabb=self.json_data['aabb_scale']
         self.K=np.array(
             [
                 [fx, 0, cx],
