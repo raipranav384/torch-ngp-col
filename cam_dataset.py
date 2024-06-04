@@ -42,6 +42,8 @@ class CamDataset(Dataset):
     def __getitem__(self, idx):
         sample = self.frames[idx]
         img_path=os.path.join(self.parent_dir,sample['file_path'])
+        if not os.path.exists(img_path):
+          return None,None,None,None
         img=cv2.imread(img_path)
         img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
